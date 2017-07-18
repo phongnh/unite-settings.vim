@@ -1,5 +1,5 @@
-if globpath(&rtp, "plugin/unite.vim") == ""
-    echohl WarningMsg | echomsg "unite.vim is not found." | echohl none
+if globpath(&rtp, 'plugin/unite.vim') == ''
+    echohl WarningMsg | echomsg 'unite.vim is not found.' | echohl none
     finish
 endif
 
@@ -10,12 +10,12 @@ endif
 let g:unite_enable_auto_select         = 0
 let g:unite_source_rec_min_cache_files = 1000
 
-if executable('ag')
-    let g:unite_source_file_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
-elseif executable('rg')
-    let g:unite_source_file_rec_async_command = ['rg', '--follow', '--color=never', '--files', '-g', '']
-elseif executable('pg')
-    let g:unite_source_file_rec_async_command = ['pt', '--follow', '--nocolor', '--nogroup', '-g:', '']
+if executable('rg')
+    let g:unite_source_file_rec_async_command = ['rg', '--color=never', '--follow', '--files', '-g', '']
+elseif executable('ag')
+    let g:unite_source_file_rec_async_command = ['ag', '--nocolor', '--nogroup', '--follow', '--hidden', '-l', '-g', '']
+elseif executable('pt')
+    let g:unite_source_file_rec_async_command = ['pt', '--nocolor', '--nogroup', '--follow', '-l', '-g=']
 endif
 
 let g:unite_ignore_source_files = [
