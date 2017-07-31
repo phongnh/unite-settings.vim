@@ -11,11 +11,11 @@ let g:unite_enable_auto_select         = 0
 let g:unite_source_rec_min_cache_files = 1000
 
 if executable('rg')
-    let g:unite_source_file_rec_async_command = ['rg', '--color=never', '--follow', '--files', '-g', '']
+    let g:unite_source_file_rec_async_command = ['rg', '--color=never', '--hidden', '--follow', '--files', '-g', '']
 elseif executable('ag')
-    let g:unite_source_file_rec_async_command = ['ag', '--nocolor', '--nogroup', '--follow', '--hidden', '-l', '-g', '']
+    let g:unite_source_file_rec_async_command = ['ag', '--nocolor', '--hidden', '--follow', '-l', '-g', '']
 elseif executable('pt')
-    let g:unite_source_file_rec_async_command = ['pt', '--nocolor', '--nogroup', '--follow', '-l', '-g=']
+    let g:unite_source_file_rec_async_command = ['pt', '--nocolor', '--hidden', '--follow', '-l', '-g=']
 endif
 
 let g:unite_ignore_source_files = [
