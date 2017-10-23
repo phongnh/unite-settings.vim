@@ -11,7 +11,7 @@ let g:unite_enable_auto_select         = 0
 let g:unite_source_rec_min_cache_files = 1000
 
 if executable('rg')
-    let g:unite_source_file_rec_async_command = ['rg', '--color=never', '--hidden', '--follow', '--files', '-g', '']
+    let g:unite_source_file_rec_async_command = ['rg', '--color=never', '--hidden', '--follow', '--files']
 elseif executable('ag')
     let g:unite_source_file_rec_async_command = ['ag', '--nocolor', '--hidden', '--follow', '-l', '-g', '']
 elseif executable('pt')
